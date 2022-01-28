@@ -1,12 +1,13 @@
 let currentInput = "";
 let lastInput = "";
 let operator = "";
-
+let history = "";
 
 let operation = document.querySelector('.operator');
 let input = document.querySelector('.current-input');
 let last = document.querySelector('.last-input');
 let buttons = document.querySelectorAll('button');
+let log = document.querySelector('.history');
 
 
 function logInput(button) {
@@ -27,22 +28,22 @@ function logInput(button) {
     } else if (button.value === "multiply") {
         if (operator !== "") {
             equal();
-            operation.innerHTML = "x";
-            operator = "x";
+            operation.innerHTML = "&#xd7;";
+            operator = "&#xd7;";
         } else {
-            operation.innerHTML = "x";
-            operator = "x";
+            operation.innerHTML = "&#xd7;";
+            operator = "&#xd7;";
             multiply();
         }
     }
     else if (button.value === "divide") {
         if (operator !== "") {
             equal();
-            operation.innerHTML = "/";
-            operator = "/";
+            operation.innerHTML = "&#xf7;";
+            operator = "&#xf7;";
         } else {
-            operation.innerHTML = "/";
-            operator = "/";
+            operation.innerHTML = "&#xf7;";
+            operator = "&#xf7;";
             divide();
         }
     }else if (button.value === "minus") {
@@ -84,6 +85,8 @@ function sum() {
         showValues();
     } else {
         total = parseFloat(currentInput) + parseFloat(lastInput);
+        history = `${lastInput} ${operator} ${currentInput} = ${total}`;
+        logHistory();
         lastInput = total;
         currentInput = "";
         showValues();
@@ -99,20 +102,28 @@ function subtract() {
         showValues();
     } else {
         total = parseFloat(lastInput) - parseFloat(currentInput);
+        history = `${lastInput} ${operator} ${currentInput} = ${total}`;
+        logHistory();
         lastInput = total;
         currentInput = "";
         showValues();
     }
 }
 
+function logHistory() {
+    log.innerHTML += history + "<br/>";
+    log.scrollTop = log.scrollHeight;
+}
+
+
 function equal() {
     if (operator === "+") {
         sum();
-    } else if (operator === "x") {
+    } else if (operator === "&#xd7;") {
         multiply();
     } else if (operator === "-") {
         subtract();
-    } else if (operator === "/") {
+    } else if (operator === "&#xf7;") {
         divide();
     }
     operator = "";
@@ -129,6 +140,8 @@ function multiply() {
         showValues();
     } else {
         product = parseFloat(currentInput) * parseFloat(lastInput);
+        history = `${lastInput} ${operator} ${currentInput} = ${product}`;
+        logHistory();
         lastInput = product;
         currentInput = "";
         showValues();
@@ -145,6 +158,8 @@ function divide() {
         showValues();
     } else {
         product = parseFloat(lastInput) / parseFloat(currentInput);
+        history = `${lastInput} ${operator} ${currentInput} = ${product}`;
+        logHistory();
         lastInput = product;
         currentInput = "";
         showValues();
@@ -172,10 +187,15 @@ function showValues() {
 }
 
 function resetAll() {
-    currentInput = "";
-    lastInput = "";
-    operator = "";
-    showValues();
+    if (lastInput != "") {
+        currentInput = "";
+        lastInput = "";
+        operator = "";
+        
+        showValues();
+    } else {
+        log.innerHTML = "";
+    }
 }
 
 function deleteLast() {

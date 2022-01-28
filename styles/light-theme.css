@@ -3,13 +3,19 @@
 --dark-orchid: #8a36c8ff;
 --wisteria: rgb(223, 205, 236);
 --ghost-white: #f8f4f9ff;
---selective-yellow: rgb(228, 143, 6);
+--selective-yellow: rgb(253, 166, 4);
 --cadet-blue: #aaa9a8;
 --sonic-silver: #f8ebd1;
 --red-salsa: rgb(246, 0, 33);
 }
+
+html {
+    height: -webkit-fill-available;
+}
 body {
     background-color: #c0c0c096;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 
@@ -18,36 +24,61 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10rem;
+    margin-top: 2rem;
 }
 
 .main {
     width: 400px;
-    height: 800px;
     box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.37);
     overflow: hidden;
     border-radius: 20px;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     
+}
+h1 {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 40px;
+}
+
+h3 {padding-top: 10px;
+    margin: 0;
+    font-size: 26px;
 }
 
 .top-wrapper {
-    display: grid;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     background-color: var(--red-salsa);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    padding: 10px;
+    padding: 15px;
     color: var(--ghost-white);
     text-align: right;
     cursor: pointer;
+    overflow: hidden;
 }
 
-.theme-switch {
-    height: 3rem;
+.history {
+    height: 8rem;
+    padding-top: 20px;
+    line-height: 30px;
+    font:18px;
+    overflow-y: scroll;
+    color: rgba(255, 255, 255, 0.637);
+    
 }
 
 .operator {
     height: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 26px;
 }
 
 .last-input {
@@ -59,7 +90,7 @@ body {
 .input-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(80px, auto);
     cursor: pointer;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -104,6 +135,9 @@ button:hover {
     color: var(--ghost-white);
     font-size: 30px;
 }
+.eq-btn:hover {
+    background-color: rgb(98, 144, 6);
+}
 .del-btn {
     background-color: var(--cadet-blue);
     border: none;
@@ -118,6 +152,5 @@ button:hover {
     max-width: 100vw;
     
 }
-.input-grid {
-}
+
 }
