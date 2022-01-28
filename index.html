@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin-Calculator</title>
+
+    <link rel="stylesheet" href="/styles/light-theme.css">
+</head>
+
+<body>
+    <div class="box-body">
+        <div class="main">
+            <div class="top-wrapper">
+                <div class="theme-switch"></div>
+                <div class="screen-wrapper">
+                    <div class="last-input">
+                        <h3></h3>
+                    </div>
+                    <div class="operator"></div>
+                    <div class="current-input">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="input-grid">
+                <button class="ac-btn" value="clear" style="grid-column: span 1.5;">AC</button>
+                <button class="adv-btn" value="negative">+/-</button>
+                <button class="adv-btn" value="%">%</button>
+                <button class="del-btn" value="delete" style="grid-column: span 1.5;">⌫</button>
+
+                <button class="num-btn" value="7">7</button>
+                <button class="num-btn" value="8">8</button>
+                <button class="num-btn" value="9">9</button>
+                <button class="op-btn" value="multiply">&#xd7;</button>
+
+                <button class="num-btn" value="4">4</button>
+                <button class="num-btn" value="5">5</button>
+                <button class="num-btn" value="6">6</button>
+                <button class="op-btn" value="divide">&#xf7;</button>
+
+                <button class="num-btn" value="1">1</button>
+                <button class="num-btn" value="2">2</button>
+                <button class="num-btn" value="3">3</button>
+                <button class="op-btn" value="minus">&#x2212;</button>
+
+                <button class="num-btn" value=".">.</button>
+                <button class="num-btn" value="0">0</button>
+                <button class="num-btn" value=".00">.00</button>
+                <button class="op-btn" value="add">&#x2b;</button>
+
+                <button class="eq-btn" value="equal" style="grid-column: span 4;">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+:root {
+/* CSS Light HEX */
+--dark-orchid: #8a36c8ff;
+--wisteria: rgb(223, 205, 236);
+--ghost-white: #f8f4f9ff;
+--selective-yellow: rgb(228, 143, 6);
+--cadet-blue: #aaa9a8;
+--sonic-silver: #f8ebd1;
+--red-salsa: rgb(246, 0, 33);
+}
+body {
+    background-color: #c0c0c096;
+}
+
+
+.box-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.main {
+    width: 350px;
+    box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.37);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.top-wrapper {
+    display: grid;
+    align-items: center;
+    background-color: var(--red-salsa);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 10px;
+    color: var(--ghost-white);
+    text-align: right;
+    cursor: pointer;
+}
+
+.theme-switch {
+    height: 3rem;
+}
+
+.operator {
+    height: 20px;
+}
+
+.last-input {
+    height: 50px;
+}
+.current-input {
+    height: 40px;
+}
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(80px, auto);
+    cursor: pointer;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+}
+button {
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--red-salsa);
+    color: var(--sonic-silver);
+}
+
+.num-btn {
+    background-color: var(--ghost-white);
+    border: none;
+}
+
+.adv-btn {
+    background-color: var(--sonic-silver);
+    border: none;
+}
+
+.ac-btn {
+    background-color: var(--selective-yellow);
+    border: none;
+    color: var(--ghost-white);
+    font-size: 15px;
+    
+}
+.op-btn {
+    background-color: var(--wisteria);
+    border: none;
+    font-size: 20px;
+}
+.eq-btn {
+    background-color: var(--dark-orchid);
+    border: none;
+    color: var(--ghost-white);
+    font-size: 30px;
+}
+.del-btn {
+    background-color: var(--cadet-blue);
+    border: none;
+}
