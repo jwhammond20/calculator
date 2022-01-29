@@ -187,10 +187,12 @@ function resetAll() {
         currentInput = "";
         lastInput = "";
         operator = "";
-
         showValues();
     } else {
         log.innerHTML = "";
+        currentInput = "";
+        operator = "";
+        showValues();
     }
 }
 
@@ -218,7 +220,7 @@ buttons.forEach(button => {
     });
 })
 
-//dark mode
+//dark mode toggle
 
 
 let toggle = true;
@@ -227,7 +229,7 @@ let toggle = true;
 function toggleHover() {
     var el1 = document.getElementById("style1"),
         el2 = document.getElementById("style2");
-    if(toggle = toggle) {
+    if (toggle = toggle) {
         el1.disabled = "disabled";
         el2.disabled = undefined;
         console.log("on");
@@ -236,18 +238,14 @@ function toggleHover() {
         el1.disabled = undefined;
         console.log("off");
     }
-    
+
 }
 
 document.getElementsByClassName("switch")[0].addEventListener("click", () => {
     if (toggle) {
-        // animate.restart();
-        // animateBackground.restart();
         toggleHover();
     } else {
-        // animate.reverse();
         toggleHover();
-        // animateBackground.reverse();
     }
     toggle = !toggle;
 });

@@ -132,6 +132,10 @@ button:hover {
     background-color: var(--xiketic);
     border: none;
 }
+.num-btn:hover {
+    background-color: var(--grullo);
+    color: var(--xiketic);
+}
 
 .adv-btn {
     background-color: var(--grullo);
