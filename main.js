@@ -35,8 +35,7 @@ function logInput(button) {
             operator = "&#xd7;";
             multiply();
         }
-    }
-    else if (button.value === "divide") {
+    } else if (button.value === "divide") {
         if (operator !== "") {
             equal();
             operation.innerHTML = "&#xf7;";
@@ -46,7 +45,7 @@ function logInput(button) {
             operator = "&#xf7;";
             divide();
         }
-    }else if (button.value === "minus") {
+    } else if (button.value === "minus") {
         if (operator !== "") {
             equal();
             operation.innerHTML = "-";
@@ -177,9 +176,6 @@ function negative() {
     }
 }
 
-// function percent() 
-
-
 function showValues() {
     last.innerHTML = `<h3>${lastInput}</h3>`;
     input.innerHTML = `<h1>${currentInput}</h1>`
@@ -191,7 +187,7 @@ function resetAll() {
         currentInput = "";
         lastInput = "";
         operator = "";
-        
+
         showValues();
     } else {
         log.innerHTML = "";
@@ -204,13 +200,11 @@ function deleteLast() {
         currentInput = newValue;
         showValues();
     } else if (currentInput < 0 || currentInput === "-") {
-        console.log("works")
         let strNum = currentInput.toString();
         let newValue = strNum.slice(0, -1);
         currentInput = newValue;
         showValues();
     } else if (currentInput === "") {
-        console.log("it works");
         operator = "";
         showValues();
     }
@@ -223,3 +217,37 @@ buttons.forEach(button => {
         logInput(button)
     });
 })
+
+//dark mode
+
+
+let toggle = true;
+
+
+function toggleHover() {
+    var el1 = document.getElementById("style1"),
+        el2 = document.getElementById("style2");
+    if(toggle = toggle) {
+        el1.disabled = "disabled";
+        el2.disabled = undefined;
+        console.log("on");
+    } else {
+        el2.disabled = "disabled";
+        el1.disabled = undefined;
+        console.log("off");
+    }
+    
+}
+
+document.getElementsByClassName("switch")[0].addEventListener("click", () => {
+    if (toggle) {
+        // animate.restart();
+        // animateBackground.restart();
+        toggleHover();
+    } else {
+        // animate.reverse();
+        toggleHover();
+        // animateBackground.reverse();
+    }
+    toggle = !toggle;
+});

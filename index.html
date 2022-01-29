@@ -7,14 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin-Calculator</title>
 
-    <link rel="stylesheet" href="./styles/light-theme.css">
+    <link id="style1" rel="stylesheet" type="text/css" href=".styles/light-theme.css" />
+    <link id="style2" rel="stylesheet" type="text/css" href=".styles/dark-theme.css" disabled="disabled" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 </head>
 
 <body>
     <div class="box-body">
         <div class="main">
+
             <div class="top-wrapper">
-                <div class="history"></div>
+                <div class="topbox">
+                    <div class="container">
+                        <div class="switch">
+                            <div class="toggle-button">
+                                <div class="toggle"></div>
+                                <div class="moon-mask"></div>
+                                <div class="circles-wrapper">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="history"></div>
+                </div>
                 <div class="screen-wrapper">
                     <div class="last-input">
                         <h3></h3>
