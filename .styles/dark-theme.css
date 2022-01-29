@@ -1,0 +1,235 @@
+:root {
+    /* CSS dark HEX */
+    --battleship-grey: #848c8eff;
+    --xiketic: #0d060fff;
+    --dark-jungle-green: #1e2824ff;
+    --pullman-brown-ups-brown: #5d3c18ff;
+    --dim-gray: #766b65ff;
+    --dark-sienna: #230000ff;
+    --sage: #a6a57aff;
+    --sage-2: #cbc9adff;
+    --grullo: #a5907eff;
+    --davys-grey: #58504bff;
+   --feldgrau: #3d5149ff;
+
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+body {
+    background-color: var(--xiketic);
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+
+.box-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.main {
+    width: 400px;
+    box-shadow: 0px 0px 70px 8px var(--dark-jungle-green);
+    overflow: hidden;
+    border-radius: 20px;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+
+}
+
+h1 {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 40px;
+}
+
+h3 {
+    padding-top: 10px;
+    margin: 0;
+    font-size: 26px;
+}
+
+.topbox {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.top-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--dark-sienna);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 15px;
+    color: var(--sage-2);
+    text-align: right;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.history {
+    height: 8rem;
+    line-height: 30px;
+    font: 18px;
+    overflow: auto;
+    color: var(--dim-gray);
+
+}
+
+.operator {
+    height: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 26px;
+    color: var(--grullo);
+}
+
+.last-input {
+    height: 50px;
+    color: var(--grullo);
+}
+
+.current-input {
+    height: 40px;
+    color: var(--grullo);
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(80px, auto);
+    cursor: pointer;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    color: var(--sage-2);
+}
+
+button {
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--sage-2);
+}
+
+button:hover {
+    background-color: var(--dark-sienna);
+    color: var(--sage);
+}
+
+.num-btn {
+    background-color: var(--xiketic);
+    border: none;
+}
+
+.adv-btn {
+    background-color: var(--grullo);
+    border: none;
+    color: var(--xiketic);
+}
+
+.ac-btn {
+    background-color: var(--pullman-brown-ups-brown);
+    border: none;
+    color: var(--ghost-white);
+    font-size: 15px;
+
+}
+
+.op-btn {
+    background-color: var(--dark-jungle-green);
+    border: none;
+    font-size: 20px;
+}
+
+.eq-btn {
+    background-color: var(--grullo);
+    border: none;
+    font-size: 30px;
+    color: var(--xiketic);
+}
+
+.eq-btn:hover {
+    background-color: var(--pullman-brown-ups-brown);
+    color: var(--grullo);
+}
+
+.del-btn {
+    background-color: var(--davys-grey);
+    border: none;
+}
+
+@media (max-width: 500px) {
+    .box-body {
+        margin: 0;
+
+    }
+
+    .main {
+        max-width: 100vw;
+
+    }
+
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch {
+    width: 25px;
+    height: 50px;
+    background-color: var(--dark-jungle-green);
+    border-radius: 40px;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    box-shadow: 0 0px 10px 2px var(--pullman-brown-ups-brown);
+}
+
+.toggle-button {
+    transform: scale(0.3px);
+    transform-origin: center center;
+    transform: translateY(20px);
+}
+
+.toggle {
+    width: 20px;
+    height: 20px;
+    margin-left: 0.2rem;
+    margin-top: 6px;
+    background-color: var(--grullo);
+    border-radius: 50%;
+}
+
+.moon-mask {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: -23px 0 0 35px;
+    border-radius: 50%;
+    transform: translateY(-25px);
+    transform: translateX(-26px);
+    background-color: var(--dark-jungle-green);
+}
+
+.circles-wrapper.circle {
+    display: none;
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    border-radius: 10px;
+}
