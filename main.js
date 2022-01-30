@@ -65,14 +65,26 @@ function logInput(button) {
         } else {
             currentInput += button.value;
             showValues();
-            currentInput = parseFloat(currentInput) / 100;
+            percent();
         }
     } else {
         currentInput += button.value;
         showValues();
     }
+};
 
-
+function percent() {
+    if (operator === "+" && lastInput != "") {
+        currentInput = ((parseFloat(currentInput) / 100) * parseFloat(lastInput));
+    } else if (operator === "-" && lastInput != "") {
+        currentInput = ((parseFloat(currentInput) / 100) * parseFloat(lastInput));
+    } else if (operator === "&#xd7;") {
+        currentInput = parseFloat(currentInput) / 100;
+    } else if (operator === "&#xf7;" && lastInput != "") {
+        currentInput = parseFloat(currentInput) / 100;
+    } else {
+        currentInput = parseFloat(currentInput) / 100;
+    }
 };
 
 function sum() {
@@ -90,7 +102,7 @@ function sum() {
         currentInput = "";
         showValues();
     }
-}
+};
 
 function subtract() {
     if (currentInput === "") {
@@ -107,12 +119,12 @@ function subtract() {
         currentInput = "";
         showValues();
     }
-}
+};
 
 function logHistory() {
     log.innerHTML += history + "<br/>";
     log.scrollTop = log.scrollHeight;
-}
+};
 
 
 function equal() {
@@ -127,7 +139,7 @@ function equal() {
     }
     operator = "";
     showValues();
-}
+};
 
 function multiply() {
     if (currentInput === "") {
@@ -145,7 +157,7 @@ function multiply() {
         currentInput = "";
         showValues();
     }
-}
+};
 
 function divide() {
     if (currentInput === "") {
@@ -163,7 +175,7 @@ function divide() {
         currentInput = "";
         showValues();
     }
-}
+};
 
 
 function negative() {
@@ -174,13 +186,13 @@ function negative() {
         currentInput = negNum;
         showValues();
     }
-}
+};
 
 function showValues() {
     last.innerHTML = `<h3>${lastInput}</h3>`;
     input.innerHTML = `<h1>${currentInput}</h1>`
     operation.innerHTML = operator;
-}
+};
 
 function resetAll() {
     if (lastInput != "") {
@@ -194,7 +206,7 @@ function resetAll() {
         operator = "";
         showValues();
     }
-}
+};
 
 function deleteLast() {
     if (currentInput > 0) {
@@ -210,7 +222,7 @@ function deleteLast() {
         operator = "";
         showValues();
     }
-}
+};
 
 
 
@@ -218,7 +230,7 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {
         logInput(button)
     });
-})
+});
 
 //dark mode toggle
 
@@ -232,13 +244,10 @@ function toggleHover() {
     if (toggle = toggle) {
         el1.disabled = "disabled";
         el2.disabled = undefined;
-        console.log("on");
     } else {
         el2.disabled = "disabled";
         el1.disabled = undefined;
-        console.log("off");
     }
-
 }
 
 document.getElementsByClassName("switch")[0].addEventListener("click", () => {
